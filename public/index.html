@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuControlDiario</title>
+  <meta name="description" content="WebApp" />
+  <meta name="author" content="Clara Di Sorbo y Florencia Di Sorbo" />
+  <meta name="copyright" content="Di Sorbo | Abril 2021" />
+  <!-- ROBOTS -->
+    <meta name="robots" content="index" /> 
+   
+  <link rel="icon" href="https://tucontroldiario.web.app/images/CuidandoMe.png" type="image/png"/>
+
+  <!--Meta Facebook -->
+  <meta property="og:title" content="TuControlDiario" />
+  <meta property="og:description" content="Genera una rutina de controles para tu salud!" />
+  <meta property="og:type" content="WebApp" />
+  <meta property="og:image" content="https://tucontroldiario.web.app/images/CuidandoMe.png"/>
+  <meta property="og:url" content="https://tucontroldiario.web.app/" />
+
+  <!--Meta Twitter -->
+  <meta property="Twitter:title" content="TuControlDiario" />
+  <meta property="Twitter:description" content="Genera una rutina de controles para tu salud!" />
+  <meta property="Twitter:image" content="https://tucontroldiario.web.app/images/CuidandoMe.png"/>
+  <meta property="Twitter:url" content="https://tucontroldiario.web.app/" />
+  <!-- Boostrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="images/CuidandoMe (1).png" alt="logoapp" class="logo">
+  </header>
+
+  <section>
+    <!-- pantalla inicial -->
+    <div id="pantallaCargaDatos">
+      <div id="pantallaCargaDatos_nombre">
+      <h1 id="tituloNombre">Cómo te llamas?</h1>
+      <input type="text" placeholder="Escribí tu nombre" id="pantallaCargaDatos_usuario">
+      </div>
+      <h2>Seguimiento:</h2>
+      <h3>Qué valores querés controlar?</h3>
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="pantallaCargaDatos_glucemia">
+        <label class="form-check-label" for="flexCheckDefault">
+          Glucemia
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="pantallaCargaDatos_presion">
+        <label class="form-check-label" for="flexCheckDefault">
+          Presión
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="pantallaCargaDatos_medicamentos">
+        <label class="form-check-label" for="flexCheckDefault">
+          Medicamentos
+        </label>
+      </div>
+      <button id="pantallaCargaDatos_btn">Siguiente</button>
+      <!-- Fin del checkbox -->
+      <!-- medicamentos -->
+      <div id="seleccionMedicamentos">
+        <h3>Cuántas pastillas debes tomar a diario?</h3>
+            <br>
+            <select name="" id="cantidadMedicamentos" >
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          <input type="submit" name="medicamentos" value="Siguiente" id="pantallaCargaDatos_seleccionMedicamentos_btn"> 
+      <!-- fin medicamentos -->
+      </div>
+    </div>
+    <!-- fin pantalla inicial -->
+
+    <!-- pantallaMedicamentos -->
+    <div id="pantallaMedicamentos">
+      <h3>Carga tus medicinas diarias:</h3>
+      <ul id="listaNuevosMedicamentos">
+      </ul>
+      <button id="pantallaMedicamentos_btn">Finalizar</button>
+    </div>
+    <!-- fin de pantalla medicamentos -->
+
+    <!-- pantalla listado -->
+    <div id="pantallaListado">
+    <input class="botonBorrarTodo" id="botonBorrarTodo" type="button" value="Borrar Todo" onclick="location.reload()"/>
+      <div id="pantallaListado_nombre">
+      <!-- <h5 id= "inpresionNombre">Juan, estos son tus controles:</h5> -->
+      </div>
+      <ul class="pantallalistado_info" id="pantallalistado_info"></ul>
+      <!-- <li>Fecha:<script>
+        var f = new Date();
+        document.write(" " + f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+        </script></li> -->
+      <!-- <li>Presión:</li>
+      <li>Glucemia:</li> -->
+      <!-- <li class="pantallaListado_medicamentos" id="pantallaListado_medicamentos">Medicamentos: <input class="form-check-input" type="checkbox" value=""></li>   -->
+      
+      <button id="pantallaListado_btn"> + </button>
+    </div>
+    <!-- fin de pantalla listado -->
+
+    <!-- detalle -->
+    <div id="pantallaDetalle">
+      <h2>Carga tus valores / pildoras de hoy:</h2>
+      <div id="pantallaDetalle_cargarPresion">
+        <h5>Presión</h5>
+        <input type="number" placeholder="ej.: 12-6" id="pantallaDetalle_cargarPresion_info">
+      </div>
+      <div id="pantallaDetalle_cargarGlucemia">
+        <h5>Glucemia</h5>
+        <input type="number" placeholder="ej.: 100" id="pantallaDetalle_cargarGlucemia_info" value="">
+      </div>
+      <div id="pantallaDetalle_cargarMedicamentos">
+        <ul id="pantallaDetalle_medicamentos">Medicamentos
+        <!-- <li id="nombreMedicamento" class="nombreMedicamento"> <input class="form-check-input" type="checkbox" value=""></li>  -->
+        </ul>
+      </div>
+      
+      <button id="pantallaDetalle_guardar" class="pantallaDetalle_guardar" onclick="cargarEnLista()">Guardar</button>
+    </div>
+    <!-- fin de detalle -->
+
+    <!-- Modal -->
+<div id="modal" class="modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('modal').style.display='none'"
+      class="w3-button w3-display-topright">&times;</span>
+      <p>Some text in the Modal..</p>
+      <p>Some text in the Modal..</p>
+    </div>
+  </div>
+</div>
+<!-- fin de modal -->
+
+
+  </section>
+
+  <!-- js Boostrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="javascript/main.js"></script>
+</body>
+
+</html>

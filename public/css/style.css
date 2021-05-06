@@ -1,0 +1,132 @@
+#seleccionMedicamentos,
+#pantallaMedicamentos,
+#pantallaListado,
+#pantallaDetalle,
+#pantallaDetalle_cargarGlucemia,
+#pantallaDetalle_cargarPresion,
+#pantallaDetalle_cargarMedicamentos {
+  display: none;
+}
+body {
+  height: 90vh;
+  font-family: "Nunito", sans-serif;
+  color: #545454;
+}
+.pantallaMedicamentos_medicinas {
+  list-style: none;
+}
+#pantallaDetalle {
+  height: 70vh;
+}
+#pantallaListado {
+  height: 70vh;
+  padding-top: 3%;
+  width: 100vw;
+}
+#pantallaMedicamentos {
+  height: 90%;
+  padding-top: 3%;
+}
+#listaNuevosMedicamentos {
+  height: 50vh;
+  overflow: auto;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  margin: 0% 30%;
+}
+header {
+  background-color: #effaff;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 14vw;
+  height: 25vh;
+}
+#pantallaCargaDatos {
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#pantallaCargaDatos_nombre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00c4cc;
+  padding: 4vw 0vw;
+  border-radius: 15px;
+}
+#tituloNombre {
+  color: whitesmoke;
+}
+input {
+  border-radius: 12px;
+  border-color: #00c4cc;
+  border-width: 1px;
+  background-color: rgba(0, 196, 204, 0.1);
+}
+button {
+  border-radius: 12px;
+  background-color: #fff;
+  border-color: #00c4cc;
+  color: #545454;
+  padding: 2%;
+  border-width: 1px;
+}
+button:hover {
+  background-color: rgba(0, 196, 204, 0.1);
+  color: black;
+}
+#botonBorrarTodo {
+  margin-left: 75%;
+}
+.form-check-input:checked {
+  background-color: rgb(10, 127, 138);
+}
+.medicamento_checked {
+  background-color: rgb(10, 127, 138);
+}
+
+#pantallaCargaDatos_seleccionMedicamentos_btn:hover {
+  background-color: rgba(0, 196, 204, 0.1);
+  color: black;
+}
+#pantallaCargaDatos_usuario {
+  width: 60%;
+  padding: 1%;
+  background-color: whitesmoke;
+}
+#pantallaListado_btn {
+  position: sticky;
+  left: 80%;
+  bottom: 5%;
+  padding: 3% 4%;
+  background-color: rgba(0, 196, 204, 0.1);
+  width: auto;
+  border-radius: 50%;
+  margin: 1%;
+}
+#pantallaListado_btn:hover {
+  background-color: rgba(0, 196, 204, 0.3);
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 42vw;
+    height: 25vh;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    margin: 0% 5%;
+  }
+  #botonBorrarTodo {
+    margin-left: 65%;
+  }
+}
