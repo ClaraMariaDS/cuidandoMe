@@ -41,11 +41,9 @@ header {
   background-color: #effaff;
   display: flex;
   justify-content: center;
+  height: 20vh;
 }
-.logo {
-  width: 14vw;
-  height: 25vh;
-}
+
 #pantallaCargaDatos {
   height: 70vh;
   width: 100vw;
@@ -117,10 +115,6 @@ button:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  .logo {
-    width: 42vw;
-    height: 25vh;
-  }
   section {
     display: flex;
     justify-content: center;
@@ -128,5 +122,13 @@ button:hover {
   }
   #botonBorrarTodo {
     margin-left: 65%;
+  }
+  .logo {
+    height: 20vh;
+    width: auto;
+  }
+  header {
+    display: flex;
+    align-items: center;
   }
 }
